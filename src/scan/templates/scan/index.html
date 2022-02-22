@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Scan</title>
-</head>
-<body>
-    Test
-    <ul>
-        {% for scan in object_list %}
-            <li>{{ scan.host }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base_generic.html" %}
+
+{% block title %} Liste des scans {% endblock %}
+
+{% block content %}
+  <h1>Accueil de la bibliothèque locale</h1>
+{% endblock %}
