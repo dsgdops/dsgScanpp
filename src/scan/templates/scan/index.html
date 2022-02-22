@@ -6,5 +6,10 @@
 </head>
 <body>
     Test
+    <ul>
+        {% for scan in object_list %}
+            <li>{{ scan.host }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

@@ -3,10 +3,10 @@ from django.http import HttpResponse
 from .models import scan
 from django.template import loader
 from django.urls import reverse
-from django.views import generic
+from django.views.generic import ListView
 
 
-class IndexView(generic.ListView):
+class IndexView(ListView):
     template_name = 'scan/index.html'
     context_object_name = 'scan_list'
 
