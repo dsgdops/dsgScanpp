@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class scan(models.Model):
-    host = models.CharField(max_length=200)
-    ports = models.CharField(max_length=200)
+    host = models.GenericIPAddressField()
+    ports = models.JSONField()
     date = models.DateField()
 
     def __str__(self):
