@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('add/', views.add_report, name='addreport'),
+    path('add/<str:ip_address>', views.add_report, name='addreport'),
 ]
