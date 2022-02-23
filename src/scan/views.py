@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from .models import scan
-from django.template import loader
-from django.urls import reverse
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
+import script
+
 
 
 class IndexView(ListView):
@@ -13,3 +13,13 @@ class IndexView(ListView):
     def get_queryset(self):
         """Return the last five scans."""
         return scan.objects.order_by('-date')[:5]
+
+def add_report(request):
+
+    #q = scan(host="127.0.0.1", ports=, date="2022-02-23")
+    #q.save()
+
+    return HttpResponse("Oui")
+
+
+
