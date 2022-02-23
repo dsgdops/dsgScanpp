@@ -5,7 +5,7 @@
 {% block content %}
   Recap
 {% for scan in object_list %}
-    <li>Host : {{ scan.host }} - </li>
+    <li>Host : {{ scan.host }} ------- {{ scan.ports }}</li>
 {% empty %}
     <li>No scan yet.</li>
 {% endfor %}

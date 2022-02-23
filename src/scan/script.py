@@ -1,4 +1,5 @@
 import nmap
+import json
 
 def run_scan(host):
     nm = nmap.PortScanner()
@@ -6,4 +7,3 @@ def run_scan(host):
     port = nm[host]['tcp']
     return port
 
-print(run_scan("192.168.0.1"))
