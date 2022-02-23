@@ -4,10 +4,18 @@
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}">
   <title>{% block title %}{% endblock %}</title>
+
+  <nav>
+    <div class="navbar">
+      <a href="/">dsgScanapp</a>
+      <a href="scan/">Rapports</a>
+      <a href="#">Configuration</a>
+    </div>
+  </nav>
+
 </head>
 
 <body>
-
   <!-- {% block sidebar %} insert default navigation text for every page {% endblock %}-->
   {% block content %}<!-- default content text (typically empty) -->{% endblock %}
 

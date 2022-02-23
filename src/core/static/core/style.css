@@ -1,4 +1,33 @@
-h1 {
-    color: red;
+.navbar {
+    background-color: #34313b;
+    padding: 2rem;
+    clear:left;
+    text-align: right;
+}
 
+.navbar a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #f0e9ff;
+    padding: 0px 50px;
+}
+
+.navbar a:first-child {
+    float: left;
+}
+
+
+.navbar .logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #f0e9ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
