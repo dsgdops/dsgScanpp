@@ -9,7 +9,6 @@ import json
 class IndexView(ListView):
     template_name = 'scan/index.html'
     context_object_name = 'scan_list'
-
     def get_queryset(self):
         """Return the last five scans."""
         return scan.objects.order_by('-date')[:5]
