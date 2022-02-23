@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, request
 from .models import scan
 from django.views.generic import ListView, TemplateView
-import script
+from . import script
 
 
 
