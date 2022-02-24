@@ -14,12 +14,16 @@
  }
      localStorage.setItem("pageloadcount", "1");
  });
+
+function loading() {
+    document.getElementById('loader').style.display = "block";
+}
 </script>
 
 <form method="post">{% csrf_token %}
-    <div class="formulaire" id="formulaire">
+    <div class="formulaire" id="formulaire" onclick="showDiv()">
         {{ form.as_table }}
-        <input type="submit" value="Scanner">
+        <input type="submit" value="Scanner" onclick="loading()">
     </div>
 
     <div class="loader" id="loader">
