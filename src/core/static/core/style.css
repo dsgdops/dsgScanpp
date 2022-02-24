@@ -91,3 +91,28 @@ body {
     font-weight: bold;
     color: #009879;
 }
+
+.historique button {
+    color: #f0e9ff;
+    border-radius: 20px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #009879;
+}
+
+.historique button:hover {
+    color: #f0e9ff;
+    border-radius: 20px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #005540;
+    transition: 0.5s;
+}
