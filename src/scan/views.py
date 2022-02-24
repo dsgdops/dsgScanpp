@@ -6,8 +6,8 @@ from . import script
 import json
 
 
-class IndexView(ListView):
-    template_name = 'scan/scan_report.html'
+class scanHistory(ListView):
+    template_name = 'scan/scan_history.html'
     context_object_name = 'scan_list'
     def get_queryset(self):
         """Return the last five scans."""
