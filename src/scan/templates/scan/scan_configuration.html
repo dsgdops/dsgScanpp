@@ -6,32 +6,25 @@
 
 {% block content %}
 
-<script type="text/javascript" src="scripts/snap.svg-min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>
- $( document ).ready(function() {
-     if (localStorage.getItem("pageloadcount")) { $("#loader").hide();
- }
-     localStorage.setItem("pageloadcount", "1");
- });
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
-function loading() {
-    document.getElementById('loader').style.display = "block";
-}
-</script>
-
-<form method="post">{% csrf_token %}
-    <div class="formulaire" id="formulaire" onclick="showDiv()">
+<form method="post" name="form">{% csrf_token %}
+    <div class="formulaire" id="formulaire">
         {{ form.as_table }}
-        <input type="submit" value="Scanner" onclick="loading()">
+        <input type="submit" value="Scanner">
     </div>
 
     <div class="loader" id="loader">
         <h1>Scan en cours...</h1>
     </div>
-
-
-
 </form>
 
+<script>
+$( ".loader" ).hide();
+$( "form" ).submit(function( event ) {
+    $( ".loader" ).show();
+    $( ".formulaire" ).hide();
+    return;
+});
+</script>
 {% endblock %}
