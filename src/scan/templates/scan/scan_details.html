@@ -2,13 +2,16 @@
 
 {% block title %} Liste des scans {% endblock %}
 
-{% block titre_page %}Historique des scans{% endblock %}
+{% block titre_page %}Détails de {{ object.host }} {% endblock %}
 
 {% block content %}
 
 {{ object.host }}
 
-{% for key, value in object.ports.items %}<p><strong>{{key}} : {{value.name}}</strong>{% endfor %}
-
+{% for key, value in object.ports.items %}<p><strong> : {{value.name}}</strong>{% endfor %}
+<div class="rapport_card">
+    Ports TCP <hr>
+    {% for key, value in object.ports.items %} <div class="port"> {{key}}</div> {% endfor %}
+</div>
 
 {% endblock %}

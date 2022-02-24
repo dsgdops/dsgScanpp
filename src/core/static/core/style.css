@@ -118,3 +118,35 @@ body {
     transition: 0.5s;
     text-decoration: none;
 }
+
+.rapport_card {
+  color: #454646;
+  text-align: center;
+  margin-top: -10rem;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 2rem;
+  background: #f9fcfd;
+  width: 20%;
+  margin-left: auto;
+  margin-right: 3rem;
+  padding: 2rem;
+  border: 2px solid #454646;
+  border-radius: 30px;
+  box-shadow: 10px 5px 5px #454646;
+}
+
+
+.rapport_card .port {
+  color: #dbf9dd;
+  text-align: center;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 1.5rem;
+  background: #2bb134;
+  width: 20%;
+  padding: 0.20rem;
+  border-radius: 20px;
+  margin: 0.5rem;
+  display: inline-block;
+}
