@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, request
 from .models import scan
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView, DetailView
 from . import script
 import json
 
@@ -12,6 +12,15 @@ class scanHistory(ListView):
     def get_queryset(self):
         """Return the last five scans."""
         return scan.objects.order_by('-date')[:5]
+
+
+class scanDetails(DetailView):
+    model = scan
+    template_name = 'scan/scan_details.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 def add_report(request, ip_address):
     q = scan(host=ip_address, ports=script.run_scan(ip_address), date="2022-02-23")
