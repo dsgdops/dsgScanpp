@@ -18,9 +18,8 @@ class scanDetails(DetailView):
     model = scan
     template_name = 'scan/scan_details.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+    def get_object(self, queryset=None):
+        return scan.objects.get(scan_id=self.kwargs.get("uuid"))
 
 def add_report(request, ip_address):
     q = scan(host=ip_address, ports=script.run_scan(ip_address), date="2022-02-23")

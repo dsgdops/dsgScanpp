@@ -6,8 +6,9 @@
 
 {% block content %}
 
-{% for scan in object_list %}
-    <li>Host : {{ scan.host }} ------- {% for key, value in scan.ports.items %}  <p><strong>{{key}} : {{value.name}}</strong>{% endfor %}</li>
-{% empty %}
+{{ object.host }}
+
+{% for key, value in object.ports.items %}<p><strong>{{key}} : {{value.name}}</strong>{% endfor %}
+
 
 {% endblock %}

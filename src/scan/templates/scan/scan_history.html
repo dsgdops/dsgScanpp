@@ -9,7 +9,6 @@
 <table class="historique">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Hôtes</th>
             <th>Date</th>
             <th>Rapport</th>
@@ -18,10 +17,10 @@
     <tbody>
         {% for scan in object_list %}
             <tr>
-                <td>{{ scan.scan_id }}</td>
                 <td>{{ scan.host }}</td>
                 <td>{{ scan.date }}</td>
-                <td> <button type="button">Voir le rapport</button> </td>
+                <td><a class="boutton" href="{% url 'scan_details' scan.scan_id %}">Voir le rapport</a></td>
+
             </tr>
         {% empty %}
             <tr>

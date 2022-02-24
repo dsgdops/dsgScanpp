@@ -92,7 +92,7 @@ body {
     color: #009879;
 }
 
-.historique button {
+.historique .boutton {
     color: #f0e9ff;
     border-radius: 20px;
     padding: 0.5rem;
@@ -102,9 +102,10 @@ body {
     outline: none;
     border: none;
     background: #009879;
+    text-decoration: none;
 }
 
-.historique button:hover {
+.historique .boutton:hover {
     color: #f0e9ff;
     border-radius: 20px;
     padding: 0.5rem;
@@ -115,4 +116,5 @@ body {
     border: none;
     background: #005540;
     transition: 0.5s;
+    text-decoration: none;
 }
