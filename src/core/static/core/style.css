@@ -31,3 +31,19 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.titre_page {
+  color: #454646;
+  text-align: center;
+  margin-top: 5rem;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 2rem;
+  background: #f9fcfd;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  border: 2px solid #454646;
+  box-shadow: 10px 5px 5px #454646;
+}
