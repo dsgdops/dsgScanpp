@@ -54,3 +54,7 @@ class categorieConfiguration(CreateView):
     template_name = 'scan/categorie_configuration.html'
     model = categorieScan
     fields = ['nom']
+    success_url = 'success/'
+
+class configurationIndex(TemplateView):
+    template_name = 'scan/configuration_index.html'
