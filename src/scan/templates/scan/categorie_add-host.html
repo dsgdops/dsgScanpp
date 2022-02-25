@@ -1,0 +1,15 @@
+{% extends "core/base_generic.html" %}
+
+{% block title %} Liste des scans {% endblock %}
+
+{% block titre_page %} Ajout d'une IP à une catégorie {% endblock %}
+
+{% block content %}
+
+<form method="post" name="form">{% csrf_token %}
+    <div class="formulaire" id="formulaire">
+        {{ form.as_table }}
+        <input type="submit" value="Scanner">
+    </div>
+</form>
+{% endblock %}

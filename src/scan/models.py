@@ -23,3 +23,12 @@ class scan(models.Model):
 
     def __str__(self):
         return self.host
+
+
+class host(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    host = models.GenericIPAddressField()
+    categorie = models.ForeignKey(categorieScan,null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.host

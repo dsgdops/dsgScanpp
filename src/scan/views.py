@@ -1,4 +1,4 @@
-from .models import scan, categorieScan
+from .models import scan, categorieScan, host
 from django.views.generic import ListView, TemplateView, DetailView,FormView, CreateView
 from .forms import addscanForm
 from datetime import datetime
@@ -65,3 +65,11 @@ class categorieConfiguration(CreateView):
 
 class configurationIndex(TemplateView):
     template_name = 'scan/configuration_index.html'
+
+class categorieSettings(TemplateView):
+    template_name = 'scan/categorie_settings.html'
+
+class categorieAddHost(CreateView):
+    template_name = 'scan/categorie_add-host.html'
+    model = host
+    fields = ['host', 'categorie']

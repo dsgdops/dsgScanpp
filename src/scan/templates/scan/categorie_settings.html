@@ -1,0 +1,17 @@
+{% extends "core/base_generic.html" %}
+
+{% block title %} Liste des scans {% endblock %}
+
+{% block titre_page %}Configuration des catégories{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align:center; font-weight: bold;font-family: Helvetica;font-size: 2rem;"></h1>
+
+<div class="sous-menu">
+    <button class="sous-menu_button-add-host" onclick="window.location='{% url 'categorie_add-host' %}';" value="click here">{% load static %} <img class="sous-menu_button-img" src='{% static "/core/img/host_add_ico.png" %}'/>Ajouter des hôtes</button>
+    <button class="sous-menu_button-create-categorie" onclick="window.location='{% url 'categorie_configuration' %}';" value="click here">{% load static %} <img class="sous-menu_button-img" src='{% static "/core/img/add_ico.png" %}'/>Créer une catégorie</button>
+</div>
+
+
+{% endblock %}
