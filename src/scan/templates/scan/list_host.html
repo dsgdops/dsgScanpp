@@ -1,0 +1,31 @@
+{% extends "core/base_generic.html" %}
+
+{% block title %} Liste des scans {% endblock %}
+
+{% block titre_page %}Liste des hôtes{% endblock %}
+
+{% block content %}
+
+<table class="historique">
+    <thead>
+        <tr>
+            <th>Hôtes</th>
+            <th>Catégorie</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for host in object_list %}
+            <tr>
+                <td>{{ host.host }}</td>
+                <td>{{ host.categorie }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td>Aucun hôte</td>
+                <td>Aucun hôte</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

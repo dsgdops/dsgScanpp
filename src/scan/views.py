@@ -69,6 +69,14 @@ class configurationIndex(TemplateView):
 class categorieSettings(TemplateView):
     template_name = 'scan/categorie_settings.html'
 
+
+class listHost(ListView):
+    template_name = 'scan/list_host.html'
+    context_object_name = 'host_list'
+    def get_queryset(self):
+        """Return the last five scans."""
+        return host.objects.order_by('host')
+
 class categorieAddHost(CreateView):
     template_name = 'scan/categorie_add-host.html'
     model = host
