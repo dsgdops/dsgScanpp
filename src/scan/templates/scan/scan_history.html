@@ -10,6 +10,7 @@
     <thead>
         <tr>
             <th>Hôtes</th>
+            <th>Catégorie</th>
             <th>Date</th>
             <th>Rapport</th>
         </tr>
@@ -18,6 +19,7 @@
         {% for scan in object_list %}
             <tr>
                 <td>{{ scan.host }}</td>
+                <td>{{ scan.categorie }}</td>
                 <td>{{ scan.date }}</td>
                 <td><a class="boutton" href="{% url 'scan_details' scan.scan_id %}">Voir le rapport</a></td>
 
