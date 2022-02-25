@@ -18,13 +18,22 @@
     float: left;
 }
 
-
 .navbar .logo {
     text-decoration: none;
     font-size: 1.5rem;
     font-family: Helvetica;
     font-weight: bold;
     color: #f0e9ff;
+}
+
+
+.navbar.config_menu {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
 }
 
 body {
@@ -151,6 +160,33 @@ body {
   display: inline-block;
 }
 
+
+.rapport_card ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.rapport_card a {
+    text-decoration: none;
+    color: #deeff5;
+}
+
+.rapport_card li {
+    color: #deeff5;
+    margin-top: 2rem;
+    background: #19aadb;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.rapport_card li:hover {
+    color: #deeff5;
+    margin-top: 2rem;
+    background: #1d6b87;
+    text-align: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
 
 .formulaire {
     text-align: center;
