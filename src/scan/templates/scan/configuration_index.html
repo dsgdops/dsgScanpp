@@ -2,16 +2,16 @@
 
 {% block title %} Liste des scans {% endblock %}
 
-{% block titre_page %}Configuration{% endblock %}
+{% block titre_page %}Choisissez un menu de configuration{% endblock %}
 
 {% block content %}
 
-<h1 style="text-align:center;">Choisissez un menu</h1>
+<h1 style="text-align:center; font-weight: bold;font-family: Helvetica;font-size: 2rem;"></h1>
 
 <div class="sous-menu">
     <button class="sous-menu_button-scan" onclick="window.location='{% url 'scan_configuration' %}';" value="click here">{% load static %} <img class="sous-menu_button-img" src='{% static "/core/img/scan_ico.png" %}'/>Scan</button>
     <button class="sous-menu_button-categorie" onclick="window.location='{% url 'categorie_configuration' %}';" value="click here">{% load static %} <img class="sous-menu_button-img" src='{% static "/core/img/category_ico.png" %}'/>Catégorie</button>
-    
+
 
 </div>
 

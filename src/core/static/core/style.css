@@ -181,25 +181,10 @@ body {
     text-align: left;
 }
 
-.rapport_card a {
-    text-decoration: none;
-    color: #deeff5;
-}
-
 .rapport_card li {
-    color: #deeff5;
+    color: #3d3c3b;
     margin-top: 2rem;
-    background: #19aadb;
-    text-align: center;
-    border-radius: 20px;
-}
-
-.rapport_card li:hover {
-    color: #deeff5;
-    margin-top: 2rem;
-    background: #1d6b87;
-    text-align: center;
-    border-radius: 20px;
+    text-align: left;
     transition: 0.5s;
 }
 
@@ -281,6 +266,7 @@ input[type=submit]:hover {
     font-weight: bold;
     font-family: Helvetica;
     border-color: #9f4c06;
+    cursor: pointer;
 }
 
 .sous-menu_button-img {
@@ -307,6 +293,7 @@ input[type=submit]:hover {
     font-weight: bold;
     font-family: Helvetica;
     border-color: #800404;
+    cursor: pointer;
 }
 
 .sous-menu_button-categorie:hover {

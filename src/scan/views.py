@@ -1,10 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse, request
 from .models import scan, categorieScan
 from django.views.generic import ListView, TemplateView, DetailView,FormView, CreateView
-from . import script
 from .forms import addscanForm
 from datetime import datetime
+from django.urls import reverse
 
 
 class scanHistory(ListView):
@@ -54,7 +52,16 @@ class categorieConfiguration(CreateView):
     template_name = 'scan/categorie_configuration.html'
     model = categorieScan
     fields = ['nom']
-    success_url = 'success/'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['categorie_list'] = categorieScan.objects.all()
+        return context
+
+    def get_success_url(self):
+        return reverse('/scan/')
 
 class configurationIndex(TemplateView):
     template_name = 'scan/configuration_index.html'

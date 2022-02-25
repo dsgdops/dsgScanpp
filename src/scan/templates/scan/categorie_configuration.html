@@ -13,5 +13,15 @@
     </div>
 </form>
 
+<div class="rapport_card">
+    Catégories existantes<hr>
+    <ul>
+    {% for categorie in categorie_list %}
+        <li>{{ categorie.nom }}</li>
+        {% empty %}
+        <li>Aucune catégorie</li>
+    {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}
