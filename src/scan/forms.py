@@ -3,7 +3,6 @@ from .models import categorieScan
 import nmap
 
 class addscanForm(forms.Form):
-    host = forms.CharField()
     categorie = forms.ModelChoiceField(queryset=categorieScan.objects.all().order_by('nom'), initial="Catégorie")
 
     def run_scan(self, host):

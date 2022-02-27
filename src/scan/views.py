@@ -28,7 +28,7 @@ class scanConfiguration(FormView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
+        # Add in a QuerySet of all the categorie
         context['categorie_list'] = categorieScan.objects.all()
         return context
 
@@ -37,12 +37,15 @@ class scanConfiguration(FormView):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
         date = datetime.today().strftime('%Y-%m-%d')
-        host = form.cleaned_data["host"]
         categorie = form.cleaned_data["categorie"]
 
-        form.run_scan(host)
-        q = scan(host=host,categorie=categorie, ports=form.run_scan(host), date=date)
-        q.save()
+        all_host_categorie = host.objects.filter(categorie=categorie)
+        for ip in all_host_categorie:
+            ip = str(ip)
+            print(ip)
+            form.run_scan(ip)
+            q = scan(host=ip, categorie=categorie, ports=form.run_scan(ip), date=date)
+            q.save()
         return super().form_valid(form)
 
 class scanSuccess(TemplateView):
