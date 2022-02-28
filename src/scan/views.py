@@ -2,7 +2,7 @@ from .models import scan, categorieScan, host, hostScan
 from django.views.generic import ListView, TemplateView, DetailView,FormView, CreateView
 from .forms import addscanForm
 from datetime import datetime
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 
 class scanHistory(ListView):
@@ -21,7 +21,6 @@ class scanDetails(DetailView):
 
 class scanConfiguration(FormView):
     template_name = 'scan/scan_configuration.html'
-    success_url = 'success/'
     form_class = addscanForm
     model = categorieScan
 
@@ -32,6 +31,8 @@ class scanConfiguration(FormView):
         context['categorie_list'] = categorieScan.objects.all()
         return context
 
+    def get_success_url(self):
+        return reverse_lazy('scan:scan_history')
 
     def form_valid(self, form):
         # This method is called when valid form data has been POSTed.
@@ -65,7 +66,7 @@ class categorieConfiguration(CreateView):
         return context
 
     def get_success_url(self):
-        return reverse('/scan/')
+        return self.request.path
 
 class configurationIndex(TemplateView):
     template_name = 'scan/configuration_index.html'
@@ -85,3 +86,6 @@ class categorieAddHost(CreateView):
     template_name = 'scan/categorie_add-host.html'
     model = host
     fields = ['host', 'categorie']
+
+    def get_success_url(self):
+        return self.request.path

@@ -38,4 +38,4 @@ class hostScan(models.Model):
     ports = models.JSONField()
 
     def __str__(self):
-        return str(self.ports)
+        return self.host
