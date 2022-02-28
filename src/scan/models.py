@@ -16,19 +16,26 @@ class categorieScan(models.Model):
 
 class scan(models.Model):
     scan_id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4,editable=False)
-    host = models.GenericIPAddressField()
-    ports = models.JSONField()
     date = models.DateField()
     categorie = models.ForeignKey(categorieScan,null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.host
+        return "%s %s %s" % (self.categorie, self.date, self.scan_id)
 
 
 class host(models.Model):
     id = models.BigAutoField(primary_key=True)
     host = models.GenericIPAddressField()
-    categorie = models.ForeignKey(categorieScan,null=True, on_delete=models.CASCADE)
+    categorie = models.ForeignKey(categorieScan, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.host
+
+
+class hostScan(models.Model):
+    scan_id = models.ForeignKey(scan,null=True, on_delete=models.CASCADE)
+    host = models.GenericIPAddressField()
+    ports = models.JSONField()
+
+    def __str__(self):
+        return str(self.ports)

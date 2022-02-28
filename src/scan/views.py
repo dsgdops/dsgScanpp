@@ -1,4 +1,4 @@
-from .models import scan, categorieScan, host
+from .models import scan, categorieScan, host, hostScan
 from django.views.generic import ListView, TemplateView, DetailView,FormView, CreateView
 from .forms import addscanForm
 from datetime import datetime
@@ -13,11 +13,11 @@ class scanHistory(ListView):
         return scan.objects.order_by('-date')[:5]
 
 class scanDetails(DetailView):
-    model = scan
+    model = hostScan
     template_name = 'scan/scan_details.html'
 
     def get_object(self, queryset=None):
-        return scan.objects.get(scan_id=self.kwargs.get("uuid"))
+        return hostScan.objects.filter(scan_id=self.kwargs.get("uuid"))
 
 class scanConfiguration(FormView):
     template_name = 'scan/scan_configuration.html'
@@ -40,12 +40,13 @@ class scanConfiguration(FormView):
         categorie = form.cleaned_data["categorie"]
 
         all_host_categorie = host.objects.filter(categorie=categorie)
+        q = scan(categorie=categorie, date=date)
+        q.save()
         for ip in all_host_categorie:
             ip = str(ip)
-            print(ip)
-            form.run_scan(ip)
-            q = scan(host=ip, categorie=categorie, ports=form.run_scan(ip), date=date)
-            q.save()
+            print("Scan de ", ip, " en cours...")
+            q2 = hostScan(scan_id=q ,host=ip, ports=form.run_scan(ip))
+            q2.save()
         return super().form_valid(form)
 
 class scanSuccess(TemplateView):
