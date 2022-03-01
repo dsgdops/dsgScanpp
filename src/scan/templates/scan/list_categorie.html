@@ -1,0 +1,31 @@
+{% extends "core/base_generic.html" %}
+
+{% block title %} Liste des scans {% endblock %}
+
+{% block titre_page %}Liste des hôtes{% endblock %}
+
+{% block content %}
+
+<table class="historique">
+    <thead>
+        <tr>
+            <th>Catégorie</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categorie in object_list %}
+            <tr>
+                <td>{{ categorie.nom }}</td>
+                <td><a class="boutton" style="background-color: #c40808;" href="{% url 'categorie_delete' categorie.id %}">Supprimer</a></td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td>Aucun hôte</td>
+                <td>Aucun hôte</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -99,3 +99,17 @@ class hostDelete(DeleteView):
 
     def get_success_url(self):
         return reverse("list_host")
+
+class listCategorie(ListView):
+    template_name = 'scan/list_categorie.html'
+    context_object_name = 'categorie_list'
+    def get_queryset(self):
+        """Return the last five categorie."""
+        return categorieScan.objects.order_by('nom')
+
+class categorieDelete(DeleteView):
+    model = categorieScan
+    success_url = reverse_lazy('categorie_settings')
+
+    def get_success_url(self):
+        return reverse("categorie_settings")

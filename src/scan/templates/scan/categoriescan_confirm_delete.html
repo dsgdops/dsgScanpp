@@ -1,0 +1,13 @@
+{% extends "core/base_generic.html" %}
+
+{% block title %} Liste des scans {% endblock %}
+
+{% block titre_page %} Confirmation {% endblock %}
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <p style="text-align: center; margin-yop: 4rem;">Voulez vous supprimer la catégorie "{{ object }}"? <input type="submit" value="Supprimer" style="background-color: #c40808;"></p>
+</form>
+
+{% endblock %}

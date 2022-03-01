@@ -106,3 +106,40 @@
     background: #a3b922;
     transition: 0.3s;
 }
+
+.sous-menu_button-list-categorie {
+    background: #cae149;
+    width: 18rem;
+    display: inline-block;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    margin-top: 5rem;
+    font-weight: bold;
+    font-family: Helvetica;
+    border-color: #8ea024;
+    cursor: pointer;
+}
+
+.sous-menu_button-list-categorie:hover {
+    background: #a3b922;
+    transition: 0.3s;
+}
+
+
+.sous-menu_button-delete-categorie {
+    background: #f04f4f;
+    width: 18rem;
+    display: inline-block;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    margin-top: 5rem;
+    font-weight: bold;
+    font-family: Helvetica;
+    border-color: #ab2c2c;
+    cursor: pointer;
+}
+
+.sous-menu_button-delete-categorie:hover {
+    background: #ab2c2c;
+    transition: 0.3s;
+}
