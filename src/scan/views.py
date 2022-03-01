@@ -1,5 +1,5 @@
 from .models import scan, categorieScan, host, hostScan
-from django.views.generic import ListView, TemplateView, DetailView,FormView, CreateView
+from django.views.generic import ListView, TemplateView, DetailView,FormView, CreateView, DeleteView
 from .forms import addscanForm
 from datetime import datetime
 from django.urls import reverse, reverse_lazy
@@ -32,7 +32,7 @@ class scanConfiguration(FormView):
         return context
 
     def get_success_url(self):
-        return reverse_lazy('scan:scan_history')
+        return reverse_lazy('scan_history')
 
     def form_valid(self, form):
         # This method is called when valid form data has been POSTed.
@@ -89,3 +89,11 @@ class categorieAddHost(CreateView):
 
     def get_success_url(self):
         return self.request.path
+
+
+class scanDelete(DeleteView):
+    model = scan
+    success_url = reverse_lazy('scan_history')
+
+    def get_success_url(self):
+        return reverse("scan_history")

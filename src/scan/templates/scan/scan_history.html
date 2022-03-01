@@ -12,6 +12,7 @@
             <th>Catégorie</th>
             <th>Date</th>
             <th>Rapport</th>
+            <th>Supprimer</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
                 <td>{{ scan.categorie }}</td>
                 <td>{{ scan.date }}</td>
                 <td><a class="boutton" href="{% url 'scan_details' scan.scan_id %}">Voir le rapport</a></td>
+                <td><a class="boutton" href="{% url 'scan_delete' scan.scan_id %}">Supprimer</a></td>
 
             </tr>
         {% empty %}
