@@ -143,3 +143,20 @@
     background: #ab2c2c;
     transition: 0.3s;
 }
+.sous-menu_button-smtp {
+    background: #34bce0;
+    width: 18rem;
+    display: inline-block;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    margin-top: 5rem;
+    font-weight: bold;
+    font-family: Helvetica;
+    border-color: #00425b;
+    cursor: pointer;
+}
+
+.sous-menu_button-smtp:hover {
+    background: #1292c2;
+    transition: 0.3s;
+}
