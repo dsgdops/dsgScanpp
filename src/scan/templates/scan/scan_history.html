@@ -21,7 +21,7 @@
                 <td>{{ scan.categorie }}</td>
                 <td>{{ scan.date }}</td>
                 <td><a class="boutton" href="{% url 'scan_details' scan.scan_id %}">Voir le rapport</a></td>
-                <td><a class="boutton" href="{% url 'scan_delete' scan.scan_id %}">Supprimer</a></td>
+                <td><a class="boutton" style="background-color: #c40808;" href="{% url 'scan_delete' scan.scan_id %}">Supprimer</a></td>
 
             </tr>
         {% empty %}
