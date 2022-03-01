@@ -50,9 +50,6 @@ class scanConfiguration(FormView):
             q2.save()
         return super().form_valid(form)
 
-class scanSuccess(TemplateView):
-    template_name = 'scan/scan_success.html'
-
 class categorieConfiguration(CreateView):
     template_name = 'scan/categorie_configuration.html'
     model = categorieScan
@@ -74,7 +71,6 @@ class configurationIndex(TemplateView):
 class categorieSettings(TemplateView):
     template_name = 'scan/categorie_settings.html'
 
-
 class listHost(ListView):
     template_name = 'scan/list_host.html'
     context_object_name = 'host_list'
@@ -90,10 +86,16 @@ class categorieAddHost(CreateView):
     def get_success_url(self):
         return self.request.path
 
-
 class scanDelete(DeleteView):
     model = scan
     success_url = reverse_lazy('scan_history')
 
     def get_success_url(self):
         return reverse("scan_history")
+
+class hostDelete(DeleteView):
+    model = host
+    success_url = reverse_lazy('list_host')
+
+    def get_success_url(self):
+        return reverse("list_host")
