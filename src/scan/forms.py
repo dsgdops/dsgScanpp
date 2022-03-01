@@ -10,5 +10,3 @@ class addscanForm(forms.Form):
         nm.scan(host, '22-443')
         port = nm[host]['tcp']
         return port
-
-

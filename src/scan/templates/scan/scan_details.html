@@ -6,13 +6,17 @@
 
 {% block content %}
 
-{{object}}
-
 {% for scan in object %}
-    {% for key, value in scan.ports.items %}<p><strong> :  {{value.name}}</strong>{% endfor %}
+    <!-- {% for key, value in scan.ports.items %}<p><strong> :  {{value.name}}</strong>{% endfor %}-->
 <div class="rapport_card">
     Ports TCP de {{ scan.host }}<hr>
-    {% for key, value in scan.ports.items %} <div class="port"> {{key}}</div> {% endfor %}
+    {% for key, value in scan.ports.items %} <div class="port"> {{key}}</div> {% endfor %}<hr>
+     <ul>
+    {% for key, value in scan.ports.items %}
+         <li>{{value.name}} : {{value.product}} - {{value.version}}  </li>
+         {% endfor %}
+    </ul>
+
 </div>
 {% endfor %}
 
