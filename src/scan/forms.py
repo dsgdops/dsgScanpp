@@ -7,7 +7,7 @@ class addscanForm(forms.Form):
 
     def run_scan(self, host):
         nm = nmap.PortScanner()
-        nm.scan(host, '22-443')
+        nm.scan(host, '22-443', '-v -sS')
         port = nm[host]['tcp']
 
         return port
