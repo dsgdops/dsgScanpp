@@ -36,6 +36,7 @@ class hostScan(models.Model):
     scan_id = models.ForeignKey(scan,null=True, on_delete=models.CASCADE)
     host = models.GenericIPAddressField()
     ports = models.JSONField()
+    portsUDP = models.JSONField(default=[])
 
     def __str__(self):
         return self.host

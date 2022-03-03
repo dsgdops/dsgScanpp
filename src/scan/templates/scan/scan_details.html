@@ -17,6 +17,14 @@
          {% endfor %}
     </ul>
 
+    Ports UDP <hr>
+    {% for key, value in scan.portsUDP.items %} <div class="portUDP"> {{key}}</div> {% endfor %}<hr>
+     <ul>
+    {% for key, value in scan.portsUDP.items %}
+         <li>{{value.name}} : {{value.product}} - {{value.version}}  </li>
+         {% endfor %}
+    </ul>
+
 </div>
 {% endfor %}
 

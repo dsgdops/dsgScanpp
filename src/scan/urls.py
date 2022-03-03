@@ -15,4 +15,5 @@ urlpatterns = [
     path('configuration/categorie/settings/', views.categorieSettings.as_view(), name='categorie_settings'),
     path('configuration/categorie/delete-categorie/<int:pk>', views.categorieDelete.as_view(), name='categorie_delete'),
     path('configuration/categorie/settings/add-host/', views.categorieAddHost.as_view(), name='categorie_add-host'),
+
 ]

@@ -9,4 +9,12 @@ class addscanForm(forms.Form):
         nm = nmap.PortScanner()
         nm.scan(host, '22-443')
         port = nm[host]['tcp']
+
         return port
+
+    def run_scanUDP(self, host):
+        nm = nmap.PortScanner()
+        nm.scan(host, '1-1024', '-v -sU')
+        portUDP = nm[host]['udp']
+
+        return portUDP

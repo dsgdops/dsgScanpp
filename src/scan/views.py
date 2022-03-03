@@ -46,7 +46,7 @@ class scanConfiguration(FormView):
         for ip in all_host_categorie:
             ip = str(ip)
             print("Scan de ", ip, " en cours...")
-            q2 = hostScan(scan_id=q ,host=ip, ports=form.run_scan(ip))
+            q2 = hostScan(scan_id=q ,host=ip, ports=form.run_scan(ip), portsUDP=form.run_scanUDP(ip))
             q2.save()
         return super().form_valid(form)
 

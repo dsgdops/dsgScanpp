@@ -175,6 +175,20 @@ body {
   display: inline-block;
 }
 
+.rapport_card .portUDP {
+  color: #dbf9dd;
+  text-align: center;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 1.5rem;
+  background: #1ea4d3;
+  width: 20%;
+  padding: 0.20rem;
+  border-radius: 20px;
+  margin: 0.5rem;
+  display: inline-block;
+}
+
 
 .rapport_card ul {
     list-style-type: none;
