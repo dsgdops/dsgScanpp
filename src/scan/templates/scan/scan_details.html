@@ -13,7 +13,7 @@
     {% for key, value in scan.ports.items %} {% if value.state == 'open' %} <div class="port"/> {% else %} <div class="portClose"/> {% endif %} {{key}} </div> {% endfor %}<hr>
      <ul>
     {% for key, value in scan.ports.items %}
-         <li>{{value.name}}: {{value.product}} - {{value.version}} - <span style="{% if value.state == 'open' %}color: #019f06;{% else %}color: red;{% endif %}"> {{value.state }}</span> </li>
+         <li>{{value.name}}: {{value.product}}  {{value.version}} - <span style="{% if value.state == 'open' %}color: #019f06;{% else %}color: red;{% endif %}"> {{value.state }}</span> </li>
          {% endfor %}
     </ul>
 
@@ -21,7 +21,7 @@
     {% for key, value in scan.portsUDP.items %} {% if value.state == 'open' %} <div class="portUDP"> {% else %} <div class="portClose"> {% endif %} {{key}} </div> {% endfor %}<hr>
      <ul>
     {% for key, value in scan.portsUDP.items %}
-         <li>{{value.name}} : {{value.product}} - {{value.version}} - <span style="{% if value.state == 'open' %}color: #019f06;{% else %}color: red;{% endif %}"> {{value.state }}</span>   </li>
+         <li>{{value.name}} : {{value.product}}  {{value.version}} - <span style="{% if value.state == 'open' %}color: #019f06;{% else %}color: red;{% endif %}"> {{value.state }}</span>   </li>
          {% endfor %}
     </ul>
 
