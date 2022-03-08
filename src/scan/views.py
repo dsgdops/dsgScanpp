@@ -115,8 +115,5 @@ class categorieDelete(DeleteView):
         return reverse("categorie_settings")
 
 
-def handler404(request, exception):
-    context = {}
-    response = render(request, "scan/404.html", context=context)
-    response.status_code = 404
-    return response
+def error404(request, exception):
+    return render(request,'404.html')

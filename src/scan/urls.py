@@ -18,4 +18,4 @@ urlpatterns = [
 
 ]
 
-handler404 = 'scan.views.handler404'
+handler404 = 'scan.views.error404'
