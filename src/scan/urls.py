@@ -19,3 +19,4 @@ urlpatterns = [
 ]
 
 handler404 = 'scan.views.error404'
+handler500 = 'scan.views.error500'
