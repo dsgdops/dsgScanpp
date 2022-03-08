@@ -17,3 +17,5 @@ urlpatterns = [
     path('configuration/categorie/settings/add-host/', views.categorieAddHost.as_view(), name='categorie_add-host'),
 
 ]
+
+handler404 = 'scan.views.handler404'

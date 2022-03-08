@@ -3,7 +3,7 @@ from django.views.generic import ListView, TemplateView, DetailView,FormView, Cr
 from .forms import addscanForm
 from datetime import datetime
 from django.urls import reverse, reverse_lazy
-
+from django.shortcuts import render
 
 class scanHistory(ListView):
     template_name = 'scan/scan_history.html'
@@ -113,3 +113,10 @@ class categorieDelete(DeleteView):
 
     def get_success_url(self):
         return reverse("categorie_settings")
+
+
+def handler404(request, exception):
+    context = {}
+    response = render(request, "scan/404.html", context=context)
+    response.status_code = 404
+    return response
