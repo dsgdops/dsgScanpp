@@ -1,6 +1,6 @@
 from django import forms
 from .models import categorieScan
-import nmap
+from . import nmap
 
 class addscanForm(forms.Form):
     categorie = forms.ModelChoiceField(queryset=categorieScan.objects.all().order_by('nom'), initial="Catégorie")
