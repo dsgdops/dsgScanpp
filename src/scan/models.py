@@ -25,7 +25,7 @@ class scan(models.Model):
 
 class host(models.Model):
     id = models.BigAutoField(primary_key=True)
-    host = models.GenericIPAddressField()
+    host = models.CharField(max_length=30)
     categorie = models.ForeignKey(categorieScan, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -34,9 +34,9 @@ class host(models.Model):
 
 class hostScan(models.Model):
     scan_id = models.ForeignKey(scan,null=True, on_delete=models.CASCADE)
-    host = models.GenericIPAddressField()
+    host = models.CharField(max_length=30)
     ports = models.JSONField()
-    portsUDP = models.JSONField(default=[])
+    portsUDP = models.JSONField()
 
     def __str__(self):
         return self.host
